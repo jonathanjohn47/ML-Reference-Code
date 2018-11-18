@@ -1,5 +1,0 @@
-import pandas as pd
-
-f = pd.read_csv("File_name.csv")
-F = f.fillna(f.mean())
-print(F)
