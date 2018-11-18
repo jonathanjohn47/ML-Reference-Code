@@ -26,3 +26,5 @@ plt.scatter(X,y,color = "red")
 plt.plot(X, lin_reg.predict(poly_reg.fit_transform(X)), color = "blue")
 plt.show()
 
+#Predict
+print(lin_reg.predict(poly_reg.fit_transform(6.5)))
