@@ -1,8 +1,7 @@
 from sklearn import preprocessing
-f = pd.read_csv("File_Name.csv")                                        #First read the csv file
-F = f.as_matrix()                                                       #Converting the csv file into python matrix
+f = pd.read_csv("FileName.csv")
+X = f.iloc[:, :-1].values
+y = f.iloc[:, -1].values
 
-le = preprocessing.LabelEncoder()                                       #Creating the object for Label Encoder
-le.fit(F[:,i])                                                          #i is the column of strings which we want to encode.
-ki  = le.transform(F[:,i])                                              #transforms the i-th column into a coded column and stores in the variable 'ki'
-F[:,0] = ki                                                             #Replace the original column with the values in 'ki'
+le = preprocessing.LabelEncoder()
+X[:,i] = le.fit_transform(X[:,i])                                         #Replace the original column with the values in 'ki'
