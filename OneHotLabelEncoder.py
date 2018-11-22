@@ -1,6 +1,6 @@
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 le = LabelEncoder()
-for i in range(1,19,1):
+for i in range(1,k,1):				#'k' is the last row in the X array created using iloc function
 	X[:,i] = le.fit_transform(X[:,i])
 
 from sklearn.preprocessing import OneHotEncoder
