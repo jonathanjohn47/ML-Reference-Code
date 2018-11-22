@@ -1,5 +1,4 @@
 from sklearn.datasets import load_boston
-
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
@@ -12,7 +11,7 @@ print(data.feature_names)
 print(X.shape)
 print(X[:,1:10])
 print(y)
-X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
+
 #------------RFR-------------#
 
 from sklearn.ensemble import RandomForestRegressor
