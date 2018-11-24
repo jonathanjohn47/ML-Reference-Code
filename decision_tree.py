@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 data = pd.read_csv("Position_Salaries.csv")
-X = data.iloc[:,:-1].values
+X = data.iloc[:,1:2].values
 y = data.iloc[:,-1].values
 
 from sklearn import preprocessing
@@ -20,6 +20,8 @@ regressor.fit(X_train,y_train)
 
 y_pred = regressor.predict(X)
 
-plt.scatter(y, y_pred, color = 'blue')
+X_grid = np.arange(min(X), max(X), 0.01)
+X_grid = X_grid.reshape(len(X_grid), 1)
+plt.plot(X,y, color = "red")
+plt.plot(X_grid, regressor.predict(X_grid), color = 'blue')
 plt.show()
-
