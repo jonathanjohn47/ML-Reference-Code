@@ -15,12 +15,12 @@ X = sc_X.fit_transform(X)
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.fit_transform(X_test)
 
-from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(n_neighbors = 5, metric = "minkowski", p=2)
-knn.fit(X_train, y_train)
-knn.predict(X)
+from sklearn.svc import SVC
+svm = SVC(kernel = "linear", random_state = 0)
+svm.fit(X_train, y_train)
+svm.predict(X)
 
 from sklearn.metrics import confusion_matrix
-cm = confusion_matrix(y, knn.predict(X))
+cm = confusion_matrix(y, svm.predict(X))
 
 print(cm)
