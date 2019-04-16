@@ -1,7 +1,5 @@
-from sklearn import preprocessing
-f = pd.read_csv("FileName.csv")
-X = f.iloc[:, :-1].values
-y = f.iloc[:, -1].values
-
-le = preprocessing.LabelEncoder()
-X[:,i] = le.fit_transform(X[:,i])                                         #Replace the original column with the values in 'ki'
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+for column in dataset.columns:
+    if dataset[column].dtype == type(object):
+        le = LabelEncoder()
+        dataset[column] = le.fit_transform(dataset[column])
